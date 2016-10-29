@@ -1,0 +1,42 @@
+{
+  "name": "fuguevit/eloquent-commentable",
+  "type": "library",
+  "description": "Implementation of commentable/remarkable traits for Laravel5 Eloquent models.",
+  "license": "MIT",
+  "homepage": "http://www.fuguevit.com",
+  "keywords": ["polymorphic","laravel","comment","remark","eloquent"],
+  "authors": [
+    {
+      "name": "Frank Wang",
+      "email": "wangxuan@188.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "illuminate/config": "^5.2",
+    "illuminate/support": "^5.2",
+    "illuminate/database": "^5.2"
+  },
+  "require-dev": {
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "^4.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fuguevit\\Commentable\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fuguevit\\Repositories\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "component": "package",
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
