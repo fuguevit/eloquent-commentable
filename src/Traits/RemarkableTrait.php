@@ -3,9 +3,8 @@
 namespace Fuguevit\Commentable\Traits;
 
 use Illuminate\Support\Facades\Config;
-use Fuguevit\Commentable\Contracts\RemarkeInterface;
 
-class RemarkableTrait implements RemarkeInterface
+trait RemarkableTrait
 {
     /**
      * {@inheritdoc}
@@ -24,7 +23,7 @@ class RemarkableTrait implements RemarkeInterface
      */
     public function remarks()
     {
-        return $this->morphMany(Config::get('remark.remarkModel'), 'remarkable');
+        return $this->morphMany(Config::get('remark.remark_model'), 'remarkable');
     }
 
     /**
@@ -46,9 +45,9 @@ class RemarkableTrait implements RemarkeInterface
      */
     protected static function createRemarksModel()
     {
-        $tagModel = Config::get('remark.remarkModel');
+        $remarkModel = Config::get('remark.remark_model');
 
-        return new $tagModel();
+        return new $remarkModel();
     }
 
     /**
