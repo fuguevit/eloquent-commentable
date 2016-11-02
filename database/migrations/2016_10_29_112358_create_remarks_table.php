@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateRemarksTable extends Migration
 {
@@ -12,8 +12,7 @@ class CreateRemarksTable extends Migration
      */
     public function up()
     {
-        Schema::create('remarks', function(Blueprint $table) {
-
+        Schema::create('remarks', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
             $table->increments('id');

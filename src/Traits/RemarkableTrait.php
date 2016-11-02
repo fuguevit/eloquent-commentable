@@ -33,7 +33,7 @@ trait RemarkableTrait
     {
         $remark = $this->createRemarksModel()->create([
             'user_id'   => $userId,
-            'content'   => $content
+            'content'   => $content,
         ]);
         $this->remarks()->attach($remark);
     }
@@ -60,6 +60,7 @@ trait RemarkableTrait
         if (isset(static::$entityNamespace)) {
             return static::$entityNamespace;
         }
+
         return $this->remarks()->getMorphClass();
     }
 }

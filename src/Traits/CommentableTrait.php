@@ -13,7 +13,8 @@ trait CommentableTrait
 
         return $instance->createRemarksModel()->whereRemarkableType(
             $instance->getEntityClassName()
-        );    }
+        );
+    }
 
     /**
      * {@inheritdoc}
@@ -31,7 +32,7 @@ trait CommentableTrait
         $comment = $this->createCommentsModel()->create([
             'user_id'   => $userId,
             'title'     => $title,
-            'body'      => $body
+            'body'      => $body,
         ]);
         $this->comments()->attach($comment);
     }
@@ -58,6 +59,7 @@ trait CommentableTrait
         if (isset(static::$entityNamespace)) {
             return static::$entityNamespace;
         }
+
         return $this->comments()->getMorphClass();
     }
 }

@@ -27,6 +27,4 @@ interface RemarkeInterface
      * @return mixed
      */
     public function addRemark($userId, $content);
-
-
 }
