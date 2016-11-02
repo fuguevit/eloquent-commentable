@@ -22,7 +22,6 @@ class CreateRemarksTable extends Migration
             $table->string('remarkable_type');
             $table->integer('remarkable_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
