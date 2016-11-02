@@ -14,7 +14,7 @@ class Remark extends Model
     /**
      * {@inheritdoc}
      */
-    protected $fillable = [ 'user_id', 'content' ];
+    protected $fillable = ['user_id', 'content'];
 
     public function remarkable()
     {
