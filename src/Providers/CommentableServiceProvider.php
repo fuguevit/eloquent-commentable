@@ -16,7 +16,7 @@ class CommentableServiceProvider extends ServiceProvider
         ], 'migrations');
         $this->publishes([
            realpath(__DIR__.'/../../config/comment.php') => config_path('comment.php'),
-           realpath(__DIR__.'/../../config/remark.php') => config_path('remark.php'),
+           realpath(__DIR__.'/../../config/remark.php')  => config_path('remark.php'),
         ], 'config');
     }
 
