@@ -2,8 +2,6 @@
 
 namespace Fuguevit\Commentable\Traits;
 
-use Illuminate\Support\Facades\Config;
-
 trait RemarkableTrait
 {
     /**
@@ -35,7 +33,7 @@ trait RemarkableTrait
             'user_id'   => $userId,
             'content'   => $content,
         ]);
-        $this->remarks()->attach($remark);
+        $this->remarks()->save($remark);
     }
 
     /**

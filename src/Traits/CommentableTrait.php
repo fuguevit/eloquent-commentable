@@ -34,7 +34,7 @@ trait CommentableTrait
             'title'     => $title,
             'body'      => $body,
         ]);
-        $this->comments()->attach($comment);
+        $this->comments()->save($comment);
     }
 
     /**
