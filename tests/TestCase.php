@@ -2,11 +2,26 @@
 
 namespace Fuguevit\Commentable\Test;
 
-use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Fuguevit\Commentable\Test\Models\Article;
+use Illuminate\Support\Facades\Schema;
 
-abstract class TestCase extends OrchestraTestCase
+class TestCase extends OrchestraTestCase
 {
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->artisan('migrate', [
+            '--database' => 'testbench',
+            '--realpath' => realpath(__DIR__.'/../database/migrations'),
+        ]);
+
+        Schema::create('articles', function ($table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->string('title');
+            $table->text('body');
+        });
+    }
 
 }
