@@ -23,7 +23,7 @@ trait RemarkableTrait
      */
     public function remarks()
     {
-        return $this->morphMany(Config::get('remark.remark_model'), 'remarkable');
+        return $this->morphMany(config('remark.remark_model'), 'remarkable');
     }
 
     /**
@@ -45,7 +45,7 @@ trait RemarkableTrait
      */
     protected static function createRemarksModel()
     {
-        $remarkModel = Config::get('remark.remark_model');
+        $remarkModel = config('remark.remark_model');
 
         return new $remarkModel();
     }

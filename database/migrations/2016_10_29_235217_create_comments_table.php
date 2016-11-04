@@ -20,8 +20,8 @@ class CreateCommentsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->boolean('approved')->default('true');
-            $table->string('remarkable_type');
-            $table->integer('remarkable_id');
+            $table->string('commentable_type')->nullable();
+            $table->integer('commentable_id')->nullable();
             $table->integer('like')->default(0);
             $table->integer('dislike')->default(0);
             $table->integer('parent_id')->default(0);

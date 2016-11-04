@@ -11,7 +11,7 @@ trait CommentableTrait
     {
         $instance = new static();
 
-        return $instance->createRemarksModel()->whereRemarkableType(
+        return $instance->createCommentsModel()->whereCommentableType(
             $instance->getEntityClassName()
         );
     }
@@ -21,7 +21,7 @@ trait CommentableTrait
      */
     public function comments()
     {
-        return $this->morphMany(Config::get('comment.comment_model'), 'commentable');
+        return $this->morphMany(config('comment.comment_model'), 'commentable');
     }
 
     /**
@@ -44,7 +44,7 @@ trait CommentableTrait
      */
     protected static function createCommentsModel()
     {
-        $commentModel = Config::get('comment.comment_model');
+        $commentModel = config('comment.comment_model');
 
         return new $commentModel();
     }

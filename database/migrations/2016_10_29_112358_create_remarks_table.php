@@ -18,8 +18,8 @@ class CreateRemarksTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->text('content');
-            $table->string('remarkable_type');
-            $table->integer('remarkable_id');
+            $table->string('remarkable_type')->nullable();
+            $table->integer('remarkable_id')->nullable();
             $table->timestamps();
         });
     }

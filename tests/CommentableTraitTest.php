@@ -3,7 +3,6 @@
 namespace Fuguevit\Commentable\Test;
 
 use Fuguevit\Commentable\Comment;
-use Fuguevit\Commentable\Test\Models\Article;
 
 class CommentableTraitTest extends TestCase
 {
