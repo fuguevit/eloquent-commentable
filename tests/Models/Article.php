@@ -2,9 +2,9 @@
 
 namespace Fuguevit\Commentable\Test\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Fuguevit\Commentable\Contracts\CommentInterface;
 use Fuguevit\Commentable\Traits\CommentableTrait;
+use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model implements CommentInterface
 {
