@@ -2,9 +2,9 @@
 
 namespace Fuguevit\Commentable\Test;
 
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Illuminate\Support\Facades\Schema;
 use Fuguevit\Commentable\Test\Models\Article;
+use Illuminate\Support\Facades\Schema;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 class TestCase extends OrchestraTestCase
 {
@@ -58,7 +58,7 @@ class TestCase extends OrchestraTestCase
     {
         return Article::create([
             'title' => 'foo',
-            'body'  => 'bar'
+            'body'  => 'bar',
         ]);
     }
 }

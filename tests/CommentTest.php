@@ -12,8 +12,7 @@ class CommentTest extends TestCase
      */
     public function test_commentable_relationship()
     {
-        $comment = new Comment;
+        $comment = new Comment();
         $this->assertInstanceOf(MorphTo::class, $comment->morphTo());
     }
-
 }
