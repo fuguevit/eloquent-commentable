@@ -4,6 +4,7 @@ namespace Fuguevit\Commentable\Test;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Illuminate\Support\Facades\Schema;
+use Fuguevit\Commentable\Test\Models\Article;
 
 class TestCase extends OrchestraTestCase
 {
@@ -24,4 +25,40 @@ class TestCase extends OrchestraTestCase
         });
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['path.base'] = __DIR__.'/../src';
+        $app['config']->set('database.default', 'testbench');
+        $app['config']->set('database.connections.testbench', [
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
+        ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getPackageProviders($app)
+    {
+        return [
+            'Fuguevit\Commentable\Providers\CommentableServiceProvider',
+        ];
+    }
+
+    /**
+     * Creates a new article.
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    protected function createArticle()
+    {
+        return Article::create([
+            'title' => 'foo',
+            'body'  => 'bar'
+        ]);
+    }
 }

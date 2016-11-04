@@ -2,11 +2,18 @@
 
 namespace Fuguevit\Commentable\Test;
 
+use Fuguevit\Commentable\Comment;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+
 class CommentTest extends TestCase
 {
-    public function test_comment()
+    /**
+     * Comment has a commentable relationship.
+     */
+    public function test_commentable_relationship()
     {
-        return assertTrue(true);
+        $comment = new Comment;
+        $this->assertInstanceOf(MorphTo::class, $comment->morphTo());
     }
 
 }
