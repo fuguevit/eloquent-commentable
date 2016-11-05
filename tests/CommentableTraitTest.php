@@ -23,7 +23,7 @@ class CommentableTraitTest extends TestCase
      */
     public function test_comments_function_has_morph_many_relation_result()
     {
-        $article  = $this->createArticle();
+        $article = $this->createArticle();
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\MorphMany', $article->comments());
     }
 }
