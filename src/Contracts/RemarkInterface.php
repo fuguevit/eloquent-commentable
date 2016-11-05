@@ -2,7 +2,7 @@
 
 namespace Fuguevit\Commentable\Contracts;
 
-interface RemarkeInterface
+interface RemarkInterface
 {
     /**
      * Return all remarks under the entity namespace.
