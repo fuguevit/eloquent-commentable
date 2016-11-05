@@ -61,5 +61,4 @@ trait RemarkableTrait
 
         return $this->remarks()->getMorphClass();
     }
-
 }
