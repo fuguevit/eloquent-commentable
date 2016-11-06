@@ -3,6 +3,7 @@
 namespace Fuguevit\Commentable\Test;
 
 use Fuguevit\Commentable\Comment;
+use Fuguevit\Commentable\Test\Models\Article;
 
 class CommentableTraitTest extends TestCase
 {
@@ -25,5 +26,14 @@ class CommentableTraitTest extends TestCase
     {
         $article  = $this->createArticle();
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\MorphMany', $article->comments());
+    }
+
+    /**
+     * Test all comments function returns collection.
+     */
+    public function test_all_comments_function_returns_collection()
+    {
+        $result = Article::allComments()->get();
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $result);
     }
 }
