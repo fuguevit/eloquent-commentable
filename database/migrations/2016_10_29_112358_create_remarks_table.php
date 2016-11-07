@@ -12,7 +12,7 @@ class CreateRemarksTable extends Migration
      */
     public function up()
     {
-        Schema::create('remarks', function (Blueprint $table) {
+        Schema::create('remarks', function(Blueprint $table) {
             $table->engine = 'InnoDB';
 
             $table->increments('id');
