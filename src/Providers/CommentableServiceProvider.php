@@ -12,11 +12,11 @@ class CommentableServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-           realpath(__DIR__.'/../../database/migrations') => database_path('migrations'),
+            realpath(__DIR__.'/../../database/migrations') => database_path('migrations'),
         ], 'migrations');
         $this->publishes([
-           realpath(__DIR__.'/../../config/comment.php') => config_path('comment.php'),
-           realpath(__DIR__.'/../../config/remark.php')  => config_path('remark.php'),
+            realpath(__DIR__.'/../../config/comment.php') => config_path('comment.php'),
+            realpath(__DIR__.'/../../config/remark.php')  => config_path('remark.php'),
         ], 'config');
     }
 
