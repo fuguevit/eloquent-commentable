@@ -25,8 +25,8 @@ interface CommentInterface
      * @param $title
      * @param $body
      * @param $parent_id
-     * 
+     *
      * @return mixed
      */
-    public function addComment($userId, $title, $body, $parent_id=null);
+    public function addComment($userId, $title, $body, $parent_id = null);
 }

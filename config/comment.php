@@ -12,5 +12,4 @@ return [
     */
     'comment_model'  => \Fuguevit\Commentable\Comment::class,
 
-
 ];
