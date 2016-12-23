@@ -27,14 +27,32 @@ trait CommentableTrait
     /**
      * {@inheritdoc}
      */
-    public function addComment($userId, $title, $body)
+    public function addComment($userId, $title, $body, $parent_id=null)
     {
+        // when parent_id is null
+        if (is_null($parent_id)) {
+            $comment = $this->createCommentsModel()->create([
+                'user_id' => $userId,
+                'title' => $title,
+                'body' => $body,
+            ]);
+            
+            return $this->comments()->save($comment);
+        }
+        
+        // when parent_id is not null
+        $instance = new static();
+        $parentComment = $instance->createCommentsModel()->find($parent_id);
+        
         $comment = $this->createCommentsModel()->create([
-            'user_id'   => $userId,
-            'title'     => $title,
-            'body'      => $body,
+            'user_id'       => $userId,
+            'title'         => $title,
+            'body'          => $body,
+            'parent_id'     => $parent_id,
+            'parent_path'   => $parentComment->parent_path.$parentComment->id.'/'
         ]);
-        $this->comments()->save($comment);
+        
+        return $this->comments()->save($comment);
     }
 
     /**

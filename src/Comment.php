@@ -14,7 +14,7 @@ class Comment extends Model
     /**
      * {@inheritdoc}
      */
-    protected $fillable = ['user_id', 'title', 'body'];
+    protected $fillable = ['user_id', 'title', 'body', 'parent_id', 'parent_path'];
 
     public function commentable()
     {
