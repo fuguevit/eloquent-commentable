@@ -24,7 +24,8 @@ class CreateCommentsTable extends Migration
             $table->integer('commentable_id')->nullable();
             $table->integer('like')->default(0);
             $table->integer('dislike')->default(0);
-            $table->integer('parent_id')->default(0);
+            $table->integer('parent_id')->nullable();
+            $table->string('parent_path')->default('/');
             $table->timestamps();
         });
     }
